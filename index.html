@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Jumat Bersih</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="laporan-container" id="laporan-content">
+        
+        <div class="header">
+            <!-- Judul Utama Sesuai Permintaan -->
+            <h1>LAPORAN PEDULI INFRASTRUKTUR</h1>
+            <!-- Subtitle akan diisi secara dinamis oleh JavaScript -->
+            <p class="subtitle" id="subtitle">Area | Gedung | Periode | Tanggal</p>
+        </div>
+        
+        <!-- Area Input Dinamis yang Hilang -->
+        <div class="report-details">
+            <p>
+                <label for="input-area" class="detail-label">Area</label>
+                <select id="input-area" class="input-field" onchange="updateReportDetails()">
+                    <option value="">-- Pilih Area --</option>
+                    <option value="AREA SULSEL">AREA SULSEL</option>
+                    <option value="AREA SULTENG">AREA SULTENG</option>
+                    <option value="AREA SULUT MALUT">AREA SULUT MALUT</option>
+                    <option value="AREA PAPUA">AREA PAPUA</option>
+                    <option value="AREA PAPUA BARAT">AREA PAPUA BARAT</option>
+                </select>
+            </p>
+            <p>
+                <label for="input-gedung" class="detail-label">Nama Gedung</label>
+                <input type="text" id="input-gedung" class="input-field" placeholder="Contoh: STO SOASIU" oninput="updateReportDetails()">
+            </p>
+            <p>
+                <label for="input-periode" class="detail-label">Periode</label>
+                <input type="text" id="input-periode" class="input-field" placeholder="Contoh: Week 1 Oktober" oninput="updateReportDetails()">
+            </p>
+            <p>
+                <label for="input-tanggal" class="detail-label">Tanggal</label>
+                <input type="date" id="input-tanggal" class="input-field" onchange="updateReportDetails()">
+            </p>
+        </div>
+
+        <div class="triple-column-container">
+            
+            <div class="column before">
+                <div class="label-box red">BEFORE</div>
+                <div class="image-box ratio-16-9" id="box-before">
+                    <label for="upload-before" class="upload-label">Klik Upload Foto Sebelum</label>
+                    <input type="file" id="upload-before" accept="image/*" class="image-input">
+                    <img id="img-before" src="" alt="Foto Sebelum" style="display: none;">
+                </div>
+            </div>
+
+            <div class="column progress">
+                <div class="label-box yellow">PROGRESS</div>
+                <div class="image-box ratio-16-9" id="box-progress">
+                    <label for="upload-progress" class="upload-label">Klik Upload Foto Progress</label>
+                    <input type="file" id="upload-progress" accept="image/*" class="image-input">
+                    <img id="img-progress" src="" alt="Foto Sedang Berjalan" style="display: none;">
+                </div>
+            </div>
+
+            <div class="column after">
+                <div class="label-box green">AFTER</div>
+                <div class="image-box ratio-16-9" id="box-after">
+                    <label for="upload-after" class="upload-label">Klik Upload Foto Sesudah</label>
+                    <input type="file" id="upload-after" accept="image/*" class="image-input">
+                    <img id="img-after" src="" alt="Foto Sesudah" style="display: none;">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <h3>PEMBERSIHAN RUANGAN</h3>
+            <!-- Teks ini akan diisi dinamis oleh JavaScript -->
+            <p id="footer-location-date">Lokasi dan Tanggal</p>
+        </div>
+
+    </div>
+
+    <div class="action-bar">
+        <button onclick="printReport()">Print Laporan (Cetak ke PDF)</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div class="note">
+        <p><em>Pastikan gambar yang dimasukkan format <b>Landscape</b> dan usahakan rasio <b>16:9</b> agar gambar bagus.</em></p>
+    </div>
+</body>
+</html>

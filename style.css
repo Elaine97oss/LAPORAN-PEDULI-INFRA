@@ -1,0 +1,352 @@
+/* --- TATA LETAK UTAMA DAN TIPOGRAFI --- */
+
+/* Mengimpor font Inter dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.laporan-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #e0e6ed;
+    padding-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #004a8f;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.report-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f7f9fc;
+}
+
+.report-details p {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-width: 250px;
+}
+
+.detail-label {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.triple-column-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.column {
+    flex: 1;
+    min-width: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.label-box {
+    padding: 10px 15px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.1em;
+}
+
+.label-box.red { background-color: #e74c3c; }
+.label-box.yellow { background-color: #f39c12; }
+.label-box.green { background-color: #2ecc71; }
+
+.image-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+
+.ratio-16-9::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+}
+
+.image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: none;
+}
+
+.upload-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-align: center;
+    padding: 10px;
+    border: 2px dashed #bbb;
+    box-sizing: border-box;
+}
+
+.upload-label::before {
+    content: "📷";
+    font-size: 2em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.upload-label:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.image-input { display: none; }
+
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-top: 1px solid #e0e6ed;
+}
+
+.footer h3 {
+    color: #444;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer p {
+    font-size: 0.85em;
+    color: #777;
+    font-style: italic;
+}
+
+.action-bar {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 0;
+}
+
+.action-bar button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.action-bar button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.action-bar button:active {
+    background-color: #003d80;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .report-details p {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .laporan-container { padding: 20px; }
+    .triple-column-container { flex-direction: column; gap: 15px; }
+    .column { min-width: 100%; }
+    .header h1 { font-size: 2em; }
+    .report-details { flex-direction: column; gap: 10px; padding: 10px; }
+    .report-details p { flex: none; width: 100%; }
+}
+
+/* Tombol hapus gambar */
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.delete-btn:hover {
+    background: rgba(220, 0, 0, 0.8);
+}
+
+/* --- PRINT STYLES --- */
+@media print {
+    @page { size: A4 landscape; margin: 1cm; }
+
+    body {
+        background-color: white !important;
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .laporan-container {
+        width: 100%;
+        max-width: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .action-bar { display: none !important; }
+    .report-details { display: none !important; background-color: white !important; }
+    .upload-label { display: none !important; }
+    .delete-btn { display: none !important; }
+
+    .triple-column-container {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 10px;
+        page-break-inside: avoid;
+        margin-top: 10px;
+    }
+
+    .column {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        flex: 1 1 33.33% !important;
+        min-width: 0 !important;
+    }
+
+    .image-box {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .ratio-16-9::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%;
+    }
+
+    .image-box img {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+.note {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 6px;
+    color: #856404;
+    font-size: 0.9em;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Sembunyikan saat print */
+@media print {
+    .note { display: none !important; }
+}
